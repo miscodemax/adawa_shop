@@ -7,7 +7,7 @@ export default async function BoutiquePage() {
     supabase.from("categories").select("id, name, slug").order("name"),
     supabase
       .from("products")
-      .select("id, name, price, image_url, category_id")
+      .select("id, name, price, image_url, category_id, slug")
       .eq("is_active", true)
       .order("created_at", { ascending: false }),
   ])

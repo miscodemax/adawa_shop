@@ -11,7 +11,7 @@ export default async function ProduitPage({
 
   const { data: product } = await supabase
     .from("products")
-    .select("id, name, description, price, image_url, stock, category_id")
+    .select("id, name, description, price, image_url, stock, category_id, slug")
     .eq("slug", slug)
     .eq("is_active", true)
     .single()

@@ -14,6 +14,7 @@ type Product = {
   price: number
   image_url: string | null
   category_id: string | null
+  slug: string
 }
 
 export function BoutiqueClient({
@@ -26,6 +27,9 @@ export function BoutiqueClient({
   const searchParams = useSearchParams()
   const [activeTab, setActiveTab] = useState<string>("all")
 
+  console.log("categories", categories)
+console.log("products", products)
+
   // Pré-sélectionne l'onglet si on arrive avec ?categorie=slug depuis l'accueil
   useEffect(() => {
     const slug = searchParams.get("categorie")
@@ -34,6 +38,8 @@ export function BoutiqueClient({
       if (match) setActiveTab(match.id)
     }
   }, [searchParams, categories])
+
+
 
   const filteredProducts = useMemo(() => {
     if (activeTab === "all") return products
