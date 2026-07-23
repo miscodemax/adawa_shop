@@ -11,7 +11,7 @@ const tabs = [
   { href: "/", label: "Accueil", icon: Home },
   { href: "/boutique", label: "Boutique", icon: Store },
   { href: "/panier", label: "Panier", icon: ShoppingBag },
-  { href: "/about", label: "Infos", icon: Info },
+  { href: "/dashboard", label: "dashboard", icon: Info },
 ]
 
 export function TabBar() {

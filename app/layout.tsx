@@ -4,6 +4,7 @@ import { CartProvider } from "@/context/CartContext";
 import { Navbar } from "./components/layout/Navbar";
 import { TabBar } from "./components/layout/TabBar";
 import { Toaster } from "sonner";
+import { InstallPrompt } from "./components/pwa/InstallPrompt";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 pb-20 md:pb-0">{children}</main>
           <TabBar />
+          <InstallPrompt />
           <Toaster position="top-center" richColors />
         </CartProvider>
       </body>

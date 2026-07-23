@@ -1,6 +1,9 @@
+
 import { Suspense } from "react"
 import { supabase } from "@/lib/supabase/client"
 import { BoutiqueClient } from "../components/products/BoutiqueClient"
+
+export const dynamic = "force-dynamic"
 
 export default async function BoutiquePage() {
   const [{ data: categories }, { data: products }] = await Promise.all([
