@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base violet — aubergine/prune, pas de violet flashy */
+  --color-primary: #4a3350;
+  --color-primary-light: #6b4d74;
+  --color-primary-dark: #372640;
+
+  /* Accent chaleureux — terracotta/beige rosé pour les CTA */
+  --color-accent: #d9a98c;
+  --color-accent-dark: #c48f6f;
+
+  /* Touche sage pour badges "bio"/"nouveau" */
+  --color-sage: #9caf88;
+
+  /* Fond crème, pas blanc froid */
+  --background: #faf7f5;
+  --foreground: #2e2630; /* anthracite chaud, pas noir pur */
+
+  /* Surfaces (cartes produits, etc.) */
+  --color-surface: #ffffff;
+  --color-border: #e8e0e4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-sage: var(--color-sage);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-fraunces);
+  --font-body: var(--font-body);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
