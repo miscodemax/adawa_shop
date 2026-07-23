@@ -23,6 +23,9 @@ export function Navbar() {
         <Link href="/about" className="hover:text-primary transition-colors">
           À propos
         </Link>
+        <Link href="/dashboard" className="hover:text-primary transition-colors">
+          À propos
+        </Link>
       </nav>
 
       <Link href="/panier" className="relative">
