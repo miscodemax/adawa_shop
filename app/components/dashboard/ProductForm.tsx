@@ -118,7 +118,7 @@ export function ProductForm({
           accept="image/*"
           onChange={handleImageSelect}
           className="hidden"
-          id="product-image"
+          id="product-img"
         />
         {imagePreview ? (
           <div className="relative w-28 h-28">
@@ -140,7 +140,7 @@ export function ProductForm({
           </div>
         ) : (
           <label
-            htmlFor="product-image"
+            htmlFor="product-img"
             className="w-28 h-28 border-2 border-dashed border-border rounded-xl flex flex-col items-center justify-center gap-1.5 cursor-pointer hover:border-accent transition-colors"
           >
             <ImagePlus size={20} className="text-foreground/40" />

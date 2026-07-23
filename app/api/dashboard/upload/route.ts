@@ -18,14 +18,14 @@ export async function POST(request: Request) {
   const fileName = `${crypto.randomUUID()}.${ext}`
 
   const { error: uploadError } = await supabaseAdmin.storage
-    .from("products")
+    .from("product-img")
     .upload(fileName, file)
 
   if (uploadError) {
     return NextResponse.json({ error: uploadError.message }, { status: 500 })
   }
 
-  const { data } = supabaseAdmin.storage.from("products").getPublicUrl(fileName)
+  const { data } = supabaseAdmin.storage.from("product-img").getPublicUrl(fileName)
 
   return NextResponse.json({ url: data.publicUrl })
 }
