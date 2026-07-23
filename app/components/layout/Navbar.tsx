@@ -24,7 +24,7 @@ export function Navbar() {
           À propos
         </Link>
         <Link href="/dashboard" className="hover:text-primary transition-colors">
-          À propos
+          Dashboard
         </Link>
       </nav>
 
