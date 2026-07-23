@@ -1,12 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react"
 import { useCart } from "@/context/CartContext"
+import { CheckoutModal } from "../components/cart/CheckoutModal"
 
 export default function PanierPage() {
   const { items, updateQuantity, removeItem, totalPrice } = useCart()
+  const [checkoutOpen, setCheckoutOpen] = useState(false)
 
   if (items.length === 0) {
     return (
@@ -84,7 +87,6 @@ export default function PanierPage() {
         </AnimatePresence>
       </div>
 
-      {/* Récap desktop inline */}
       <div className="hidden md:block max-w-2xl mt-8 border-t border-border pt-6">
         <div className="flex items-center justify-between mb-6">
           <span className="text-foreground/60">Total</span>
@@ -92,15 +94,14 @@ export default function PanierPage() {
             {totalPrice.toLocaleString("fr-FR")} FCFA
           </span>
         </div>
-        <Link
-          href="/checkout"
+        <button
+          onClick={() => setCheckoutOpen(true)}
           className="inline-block bg-primary text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors"
         >
           Commander
-        </Link>
+        </button>
       </div>
 
-      {/* Bar sticky mobile */}
       <div className="md:hidden fixed bottom-[64px] left-0 right-0 p-4 bg-background border-t border-border">
         <div className="flex items-center justify-between mb-3">
           <span className="text-sm text-foreground/60">Total</span>
@@ -108,13 +109,15 @@ export default function PanierPage() {
             {totalPrice.toLocaleString("fr-FR")} FCFA
           </span>
         </div>
-        <Link
-          href="/checkout"
+        <button
+          onClick={() => setCheckoutOpen(true)}
           className="block w-full text-center bg-primary text-white py-3.5 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors"
         >
           Commander
-        </Link>
+        </button>
       </div>
+
+      <CheckoutModal open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </div>
   )
 }
