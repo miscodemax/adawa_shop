@@ -10,7 +10,7 @@ export function Navbar() {
   return (
     <header className="hidden md:flex items-center justify-between px-10 py-5 border-b border-border bg-surface sticky top-0 z-50">
       <Link href="/" className="font-serif text-2xl text-primary tracking-tight">
-        Adawa Shop
+        orachie
       </Link>
 
       <nav className="flex items-center gap-8 text-sm text-foreground/70">

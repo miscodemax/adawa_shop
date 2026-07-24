@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Adawa Shop",
+    title: "Orachie",
   },
   icons: {
     apple: "/icons/icon-192x192.png",
