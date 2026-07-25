@@ -21,7 +21,7 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adawa Shop",
+  title: "ORachie",
   description: "Cosmétiques, soins et bien-être",
   manifest: "/manifest.json",
   appleWebApp: {
